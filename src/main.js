@@ -1,5 +1,3 @@
-import "@fontsource/andika/latin-400.css";
-import "@fontsource/andika/latin-700.css";
 import "./style.css";
 import {
   alphabet,
@@ -544,7 +542,7 @@ app.addEventListener("click", (e) => {
     modal = null;
     startSession();
   } else if (a === "test-audio")
-    speak([["你好呀，小探险家。"], ["A. apple.", "en-US"]]);
+    speak([["你好呀，小探险家。"], ["a", "en-US"], ["apple", "en-US"]]);
   else if (a === "toggle-print") {
     printSelection.has(v) ? printSelection.delete(v) : printSelection.add(v);
     render();

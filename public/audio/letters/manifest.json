@@ -1,0 +1,158 @@
+{
+  "a": {
+    "name": "the letter a",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]a[[char NORM]]",
+    "duration": 0.864
+  },
+  "b": {
+    "name": "bee",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]b[[char NORM]]",
+    "duration": 0.83
+  },
+  "c": {
+    "name": "see",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]c[[char NORM]]",
+    "duration": 0.951
+  },
+  "d": {
+    "name": "dee",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]d[[char NORM]]",
+    "duration": 0.822
+  },
+  "e": {
+    "name": "ee",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]e[[char NORM]]",
+    "duration": 0.806
+  },
+  "f": {
+    "name": "eff",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]f[[char NORM]]",
+    "duration": 0.876
+  },
+  "g": {
+    "name": "gee",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]g[[char NORM]]",
+    "duration": 0.879
+  },
+  "h": {
+    "name": "aitch",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]h[[char NORM]]",
+    "duration": 0.98
+  },
+  "i": {
+    "name": "eye",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]i[[char NORM]]",
+    "duration": 0.898
+  },
+  "j": {
+    "name": "jay",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]j[[char NORM]]",
+    "duration": 0.94
+  },
+  "k": {
+    "name": "kay",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]k[[char NORM]]",
+    "duration": 0.962
+  },
+  "l": {
+    "name": "ell",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]l[[char NORM]]",
+    "duration": 0.899
+  },
+  "m": {
+    "name": "em",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]m[[char NORM]]",
+    "duration": 0.853
+  },
+  "n": {
+    "name": "en",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]n[[char NORM]]",
+    "duration": 0.853
+  },
+  "o": {
+    "name": "oh",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]o[[char NORM]]",
+    "duration": 0.872
+  },
+  "p": {
+    "name": "pee",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]p[[char NORM]]",
+    "duration": 0.864
+  },
+  "q": {
+    "name": "cue",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]q[[char NORM]]",
+    "duration": 0.869
+  },
+  "r": {
+    "name": "ar",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]r[[char NORM]]",
+    "duration": 0.852
+  },
+  "s": {
+    "name": "ess",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]s[[char NORM]]",
+    "duration": 0.899
+  },
+  "t": {
+    "name": "tee",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]t[[char NORM]]",
+    "duration": 0.892
+  },
+  "u": {
+    "name": "you",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]u[[char NORM]]",
+    "duration": 0.848
+  },
+  "v": {
+    "name": "vee",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]v[[char NORM]]",
+    "duration": 0.871
+  },
+  "w": {
+    "name": "double you",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]w[[char NORM]]",
+    "duration": 1.058
+  },
+  "x": {
+    "name": "ex",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]x[[char NORM]]",
+    "duration": 0.981
+  },
+  "y": {
+    "name": "why",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]y[[char NORM]]",
+    "duration": 0.985
+  },
+  "z": {
+    "name": "zee",
+    "voice": "Samantha",
+    "input": "[[char LTRL]]z[[char NORM]]",
+    "duration": 0.956
+  }
+}

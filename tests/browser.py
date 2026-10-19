@@ -13,7 +13,7 @@ with sync_playwright() as p:
     browser=p.chromium.launch(headless=True)
     page=browser.new_page(viewport={'width':1440,'height':1000})
     errors=[];page.on('pageerror',lambda err:errors.append(str(err)))
-    page.add_init_script('''window.__speech=[];speechSynthesis.speak=u=>window.__speech.push({text:u.text,lang:u.lang});speechSynthesis.cancel=()=>{};''')
+    page.add_init_script('''window.__speech=[];window.__clips=[];window.Audio=class extends EventTarget{constructor(src){super();window.__clips.push(src);}play(){setTimeout(()=>this.dispatchEvent(new Event('ended')),10);return Promise.resolve();}pause(){}};window.SpeechSynthesisUtterance=class{constructor(text){this.text=text;}};speechSynthesis.getVoices=()=>[{name:'Albert',lang:'en-US',localService:true},{name:'Samantha',lang:'en-US',localService:true},{name:'Tingting',lang:'zh-CN',localService:true}];speechSynthesis.speak=u=>{window.__speech.push({text:u.text,lang:u.lang,voice:u.voice?.name,rate:u.rate});setTimeout(()=>u.onend?.(),0);};speechSynthesis.cancel=()=>{};''')
     def click(action): page.locator('[data-action="'+action+'"]').click()
     def saved(): return page.evaluate('(k)=>JSON.parse(localStorage.getItem(k))',KEY)
     def stage(s): expect(page.locator('.stepper .current')).to_contain_text(s)
@@ -39,7 +39,7 @@ with sync_playwright() as p:
     page.keyboard.press('z')
     expect(page.locator('.key.lit')).to_have_text('A')
     assert saved()['mistakes']['a']==1
-    assert any(x['text']=='A' and x['lang']=='en-US' for x in page.evaluate('window.__speech'))
+    page.wait_for_function("window.__clips.includes('/audio/letters/a.wav')")
     page.evaluate("window.dispatchEvent(new KeyboardEvent('keydown',{key:'a',repeat:true}))")
     assert saved()['session']['index']==0
     page.keyboard.press('Shift+A');page.wait_for_timeout(500)
@@ -72,6 +72,8 @@ with sync_playwright() as p:
     assert saved()['session']['lesson']==1
     # Independent letter practice must preserve the ongoing lesson.
     page.get_by_role('link',name='认识字母').click()
+    page.locator('[data-action="select-letter"][data-value="j"]').click()
+    page.wait_for_function("window.__clips.includes('/audio/letters/j.wav')")
     page.locator('[data-action="select-letter"][data-value="g"]').click()
     page.screenshot(path=str(OUT/'letters.png'),full_page=True)
     click('practice-letter');page.keyboard.press('g');page.wait_for_timeout(500)

@@ -1,0 +1,4 @@
+Patrick Hand, designed by Patrick Wagesreiter, distributed under the SIL Open Font License 1.1 (see Patrick-Hand-OFL.txt).
+The font is bundled unmodified. All lowercase letters use this one handwritten family, including l with a curved foot and single-storey a/g.
+Source: @fontsource/patrick-hand. Reproduce the font and matching worksheet outlines with scripts/generate_glyphs.py.
+Project: https://github.com/google/fonts/tree/main/ofl/patrickhand

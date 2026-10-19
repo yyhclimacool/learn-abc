@@ -1,3 +1,4 @@
+@font-face { font-family: "Patrick Hand"; src: url("/fonts/patrick-hand-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 :root {
   --ink: #293f48;
   --muted: #73838b;
@@ -86,7 +87,7 @@ kbd,
 .letter-chips,
 .print-letters,
 .progress-alphabet {
-  font-family: Andika, sans-serif;
+  font-family: "Patrick Hand", sans-serif;
 }
 .site-header {
   height: 105px;
@@ -722,7 +723,7 @@ kbd {
   margin: 10px auto 15px;
 }
 .big-capital {
-  font: 145px Andika;
+  font: 145px "Patrick Hand";
   color: #9cb0b6;
 }
 .learn-display > div {
@@ -799,7 +800,7 @@ kbd {
   border: 1px solid #dce4e7;
   border-bottom: 3px solid #dce4e7;
   border-radius: 8px;
-  font: 19px Andika;
+  font: 19px "Patrick Hand";
   color: #758891;
   background: #f7f9fa;
 }
@@ -951,7 +952,7 @@ kbd {
   padding: 22px 28px;
 }
 .parent-stats strong {
-  font: 34px Andika;
+  font: 34px "Patrick Hand";
   color: #547984;
   display: block;
 }
@@ -1074,7 +1075,7 @@ kbd {
   transform: rotate(-3deg);
 }
 .paper-preview > span {
-  font: 16px Andika;
+  font: 16px "Patrick Hand";
   color: #8a9b9e;
 }
 .paper-preview .ruled-letter {

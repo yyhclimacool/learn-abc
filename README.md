@@ -49,13 +49,13 @@ npm run preview
 3. 从首页点击“开始今天的探险”；孩子之后可以跟着中文引导完成一轮。
 4. 打印时选 A4、实际大小，关闭浏览器页眉页脚；也可以选择“存储为 PDF”。
 
-浏览器语音使用 `speechSynthesis`，声音质量和可用语言由设备及浏览器决定。无语音支持时，家长中心显示提示。键盘练习面向真实物理键盘；手机适配用于浏览、家长设置，不提供触屏打字模式。
+26 个字母名称使用随网站附带的固定 WAV 音频（由 Samantha 合成），带起音缓冲，避免截掉 p 等字母的辅音。大小写共用对应字母音频。单词和中文提示使用 `speechSynthesis`，优先选择常规声音，排除特殊音色；语速为 0.95。声音按顺序播放，切换或静音会停止当前声音。字母音频播放失败时回退到系统语音。无语音支持时，家长中心显示提示。键盘练习面向真实物理键盘；手机适配用于浏览、家长设置，不提供触屏打字模式。
 
 进度保存于当前浏览器的 `localStorage`，刷新后可继续；清除网站数据、换浏览器或换设备后不自动同步。可以选择关闭声音。不设倒计时、扣分、排行榜或签到惩罚。
 
 ## 字体与打印
 
-英文字母使用 SIL Andika（OFL），随构建产物分发，不依赖在线字体加载。许可证在 `public/fonts/Andika-OFL.txt`。
+英文字母统一使用 Patrick Hand 手写体（OFL），随构建产物分发，不依赖在线字体加载。小写 l 底部有向右弯钩，a、g 为单层；全部 26 个小写字母采用同一套原始手写字形，不再单独修改某个字母。学习卡、闯关、主题插画和描红纸保持一致。许可证和字体来源说明位于 `public/fonts/`。
 
 四线三格使用同一字体导出的 SVG 轮廓，依据字体 x-height 对齐中格与基线；a、g 为单层字形。轮廓文件 `src/glyphs.json` 已入库，正常开发无需 Python。需更新字体轮廓时：
 
@@ -80,6 +80,8 @@ python3 -m venv .venv
 .venv/bin/playwright install chromium
 .venv/bin/python tests/browser.py
 .venv/bin/python tests/last-lesson.py
+.venv/bin/python tests/media.py
+.venv/bin/python tests/browser-media.py
 ```
 
 覆盖摸底、完整关卡、错误 / 长按 / 大写输入、刷新恢复、单词完成时中断、单字练习不覆盖课程、声音开关、A4 分页与响应式布局。截图和测试 PDF 输出在忽略的 `.artifacts/` 中。语音测试验证调用与语言选择，不替代真人试听。
@@ -94,3 +96,7 @@ python3 -m venv .venv
 - `src/style.css`：页面、响应式布局与打印样式。
 - `docs/design.md`：视觉设计方向。
 - `.agents/skills/`：项目开发技能。
+
+### 重新生成字母音频
+
+资源已随项目附带，另一台 Mac 不需要重新生成。开发时可在安装了 Samantha 声音的 macOS 上运行 `.venv/bin/python scripts/generate_letter_audio.py`，用小写字母的拼读模式生成全部字母 WAV 和清单，避免 ay/eye 等普通单词歧义。脚本保留完整起音，并在头尾添加静音；不要裁掉 p/b 等字母的辅音。
